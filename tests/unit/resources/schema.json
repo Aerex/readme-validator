@@ -1,0 +1,36 @@
+{
+  "header" : {
+    "required": ["Installation", "Configuration", "General structure", "Docker", "Node.js", "Swift", "Java", "CloudFoundry", "Local development"],
+    "three": {
+      "Installation": {
+        "types": ["list"]
+      },
+      "Configuration" : {
+        "types": ["list", "para"]
+      },
+      "General structure": {
+        "types": ["para","list"]
+      },
+      "CloudFoundry": {
+        "types": ["para"]
+      },
+      "Docker": {
+        "types": ["para"]
+      },
+      "Local development" : {
+        "types": ["para"]
+      }
+    },
+    "four": {
+      "Node.js" : {
+        "types": ["para"]
+      },
+      "Java": {
+        "types": ["para"]
+      },
+      "Swift": {
+        "types": ["para"]
+      }
+    }
+  }
+}
