@@ -5,7 +5,7 @@ function Application() {
 }
 
 Application.prototype.start = function (done) {
-    server = fork(process.cwd() + 'index.js');
+    server = fork(process.cwd() + '/index.js');
     server.on('message', function(msg){
         if(msg === 'listening'){
             done();

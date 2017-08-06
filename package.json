@@ -5,13 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha tests/unit --recursive",
-    "coverage": "istanbul cover --include-all-sources true --root=lib --report lcovonly  _mocha -- tests/unit --recursive -R spec-xunit-file --retries 3 --timeout 60000"
+    "coverage": "istanbul cover --include-all-sources true --root=lib --report lcovonly  _mocha -- tests/unit --recursive -R spec-xunit-file --retries 3 --timeout 60000",
+    "integration": "mocha tests/integration/test.js",
+    "check-coverage": "istanbul check-coverage --lines 80"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "chai": "^4.1.0",
+    "chai-http": "^3.0.0",
     "istanbul": "^0.4.5",
     "mocha": "^3.4.2",
     "spec-xunit-file": "0.0.1-3"

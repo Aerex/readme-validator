@@ -16,8 +16,6 @@ app.use(bodyParser.urlencoded({ extended: true, limit: '5mb' }));
 app.post('/validate', function(req, res) {
 	let docSchmea = req.body.schema || null;
 	let markdownFile = req.body.md || null;
-	
-	markdownFile = fs.readFileSync('tests/integration/resources/sample.md', 'utf-8');
 
 	if(!docSchmea){
 		res.status(409).json({message: 'Document schema is not defined'});
@@ -48,3 +46,5 @@ app.listen(PORT, function() {
             process.send('listening');
 	 }
 });
+
+module.exports = app;
