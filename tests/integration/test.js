@@ -3,6 +3,7 @@ var app;
 var context = process.env['TEST_ROUTE'] || 'http://localhost:39014';
 var fs = require('fs');
 var request = require('request');
+var child = require('child_process');
 var assert = require('chai').assert;
 
 var validMarkdown = fs.readFileSync('tests/integration/resources/valid-readme.md', 'utf-8');
@@ -45,5 +46,17 @@ describe('Validate README', function() {
             }
             done();
         });
+	});
+
+	it('should validate correct readme through shell script', function(done){
+		let json = {schema : schema, md: validMarkdown};
+		
+		child.execFile(process.cwd() + '/tests/integration/resources/run.sh', [context, JSON.stringify(json)], function(error, stdout, stderr){
+			if(error){
+				assert.isOk(false, 'This should not happen ' + err);
+			} else {
+				done();
+			}
+		});
 	});
 });
