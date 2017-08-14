@@ -1,6 +1,6 @@
 var Server = require('./server');
 var app;
-var context = process.env['TEST_ROUTE'] || 'http://localhost:39014';
+var context = 'http://localhost:39014';
 var fs = require('fs');
 var request = require('request');
 var child = require('child_process');
@@ -53,8 +53,9 @@ describe('Validate README', function() {
 		
 		child.execFile(process.cwd() + '/tests/integration/resources/run.sh', [context, JSON.stringify(json)], function(error, stdout, stderr){
 			if(error){
-				assert.isOk(false, 'This should not happen ' + err);
+				assert.isOk(false, 'This should not happen ' + error);
 			} else {
+				console.log(stdout);
 				done();
 			}
 		});
