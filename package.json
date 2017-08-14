@@ -1,6 +1,6 @@
 {
   "name": "readme-validator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Validates a README document against a schema",
   "main": "index.js",
   "scripts": {

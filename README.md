@@ -107,6 +107,44 @@ Validate the readme `parserInstance.validate()` and returns a JSON response like
 ```
 
 
+## Rules 
+
+* header 
+    * required - the required headers for the readme
+    * one - six
+        * the headers configuration for each header type (e.g. h1, h2, etc)
+        * types - the valid structure types under each header section (e.g. numberlist, para, etc)
+            * valid types are (numberlist, bulletlist, para)
+
+### Sample Schema JSON
+
+```javascript
+{
+  "header" : {
+    "required": ["Installation", "Configuration"],
+    "three": {
+      "Installation": {
+        "types": ["list"]
+      },
+      "Configuration" : {
+        "types": ["list", "para"]
+      }
+    },
+    "four": {
+      "Node.js" : {
+        "types": ["para"]
+      },
+      "Java": {
+        "types": ["para"]
+      },
+      "Swift": {
+        "types": ["para"]
+      }
+    }
+  }
+}
+```
+
 
 ## Testing
 
@@ -121,3 +159,8 @@ To run the integration test run the following command
 To run the unit tests run the following command
 
 `npm test`
+
+
+### TODO
+
+Validate content not just structure
